@@ -39,7 +39,7 @@ function Survey2({ onNext, survey2Answers, setSurvey2Answers, total2, setTotal2}
   const allQuestionsAnswered = Object.values(responses).every(value => value !== '');
 
   const handleNextClick = () => {
-    if(!allQuestionsAnswered){
+    /*if(!allQuestionsAnswered){
       document.getElementById("warningDiv").style.display = "block";
 
     }
@@ -47,7 +47,11 @@ function Survey2({ onNext, survey2Answers, setSurvey2Answers, total2, setTotal2}
       const totalScore = calculateTotalScore();
       setTotal2(totalScore);
       onNext(); 
-    }
+    }*/
+    recordSurveyAnswers();
+      const totalScore = calculateTotalScore();
+      setTotal1(totalScore);
+      onNext();
   };
 
   //below survey is PHQ-9

@@ -72,7 +72,7 @@ function Survey2({ onNext, survey3Answers, setSurvey3Answers, total3, setTotal3 
   const allQuestionsAnswered = Object.values(responses).every(value => value !== '');
 
   const handleNextClick = () => {
-    if(!allQuestionsAnswered){
+    /*if(!allQuestionsAnswered){
       document.getElementById("warningDiv").style.display = "block";
 
     }
@@ -80,7 +80,11 @@ function Survey2({ onNext, survey3Answers, setSurvey3Answers, total3, setTotal3 
       const totalScore = calculateTotalScore(); 
       setTotal3(totalScore);
       onNext();
-    }
+    }*/
+    recordSurveyAnswers();
+      const totalScore = calculateTotalScore();
+      setTotal1(totalScore);
+      onNext();
   };
  
   //below survey is the OCI from Veale.co.uk

@@ -36,7 +36,7 @@ function Survey1({ onNext, survey1Answers, setSurvey1Answers, total1, setTotal1}
   const allQuestionsAnswered = Object.values(responses).every(value => value !== '');
 
   const handleNextClick = () => {
-    if (!allQuestionsAnswered) {
+    /*if (!allQuestionsAnswered) {
       document.getElementById("warningDiv").style.display = "block";
     }
     else{
@@ -44,7 +44,11 @@ function Survey1({ onNext, survey1Answers, setSurvey1Answers, total1, setTotal1}
       const totalScore = calculateTotalScore();
       setTotal1(totalScore);
       onNext(); 
-    }
+    }*/
+    recordSurveyAnswers();
+      const totalScore = calculateTotalScore();
+      setTotal1(totalScore);
+      onNext();
   };
 
   //below survey is the GAD-7 anxiety survey
