@@ -83,7 +83,7 @@ function Survey2({ onNext, survey3Answers, setSurvey3Answers, total3, setTotal3 
     }*/
     recordSurveyAnswers();
       const totalScore = calculateTotalScore();
-      setTotal1(totalScore);
+      setTotal3(totalScore);
       onNext();
   };
  
