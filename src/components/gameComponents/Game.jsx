@@ -31,7 +31,7 @@ function Game( {probs, playerGold, setPlayerGold, choices, setChoices, results, 
   };
 
   useEffect(() => {
-    if (trialNum >= 80) {
+    if (trialNum >= 10) {
       handleGameEnd();
     }
   }, [trialNum, handleGameEnd]); 

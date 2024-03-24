@@ -36,7 +36,7 @@ function Survey1({ onNext, survey1Answers, setSurvey1Answers, total1, setTotal1}
   const allQuestionsAnswered = Object.values(responses).every(value => value !== '');
 
   const handleNextClick = () => {
-    /*if (!allQuestionsAnswered) {
+    if (!allQuestionsAnswered) {
       document.getElementById("warningDiv").style.display = "block";
     }
     else{
@@ -44,11 +44,7 @@ function Survey1({ onNext, survey1Answers, setSurvey1Answers, total1, setTotal1}
       const totalScore = calculateTotalScore();
       setTotal1(totalScore);
       onNext(); 
-    }*/
-    recordSurveyAnswers();
-      const totalScore = calculateTotalScore();
-      setTotal1(totalScore);
-      onNext();
+    }
   };
 
   //below survey is the GAD-7 anxiety survey
@@ -67,7 +63,9 @@ function Survey1({ onNext, survey1Answers, setSurvey1Answers, total1, setTotal1}
           <SurveyQuestionV1 question="Being so restless that it is hard to sit still" onChange={(e) => handleSelectChange(e, 'q5')} />
           <SurveyQuestionV1 question="Becoming easily annoyed or irritable" onChange={(e) => handleSelectChange(e, 'q6')} />
           <SurveyQuestionV1 question="Feeling afraid as if something awful might happen" onChange={(e) => handleSelectChange(e, 'q7')} />
-          c
+          <div id='warningDiv'>
+            Please answer all questions before continuing 
+          </div>
           <div className='ButtonDiv'>
             <button onClick={handleNextClick}>Next</button>
           </div>
